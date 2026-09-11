@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr screenshot</title>
+    <link rel="stylesheet" href="viewer.css">
+  </head>
+  <body>
+    <main>
+      <header class="viewer-header">
+        <div>
+          <p class="eyebrow">SPOTTR / SCREENSHOT</p>
+          <h1 id="project">QA note</h1>
+          <p id="meta" class="viewer-meta"></p>
+        </div>
+        <a id="source" class="source-link" hidden target="_blank" rel="noreferrer">Open source page</a>
+      </header>
+
+      <p id="status" class="status">Loading screenshot...</p>
+
+      <section id="viewer" class="viewer" hidden>
+        <figure class="screenshot-frame">
+          <img id="screenshot" alt="QA note screenshot">
+        </figure>
+        <p id="message" class="note-message"></p>
+      </section>
+    </main>
+    <script type="module" src="viewer.js"></script>
+  </body>
+</html>

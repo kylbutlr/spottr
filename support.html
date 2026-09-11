@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr support</title>
+    <link rel="stylesheet" href="pages.css">
+  </head>
+  <body>
+    <main class="page prose">
+      <header class="page-header">
+        <p class="eyebrow">Spottr support</p>
+        <h1>Get back to capturing.</h1>
+        <p class="lede">Most Spottr problems come from Chrome restricting the current page, the page changing during capture, or the local browser profile running short on storage.</p>
+      </header>
+
+      <section><h2>Capture will not start</h2><ul><li>Open a normal http or https webpage, then try again.</li><li>Chrome blocks extensions on <code>chrome://</code> pages, the Chrome Web Store, browser UI, and some built-in viewers.</li><li>For a local <code>file://</code> page, serve the file over localhost. Spottr does not request file access.</li><li>Reload a page that was already open when Spottr was installed, then retry.</li></ul></section>
+      <section><h2>The screenshot is missing or wrong</h2><ul><li>Keep the target tab active until the note composer appears.</li><li>Spottr captures only the visible viewport, not a full scrolling page.</li><li>If the page zoom, viewport, or browser window changes mid-capture, cancel with Escape and start again.</li></ul></section>
+      <section><h2>A note will not save</h2><ul><li>Add a note description and select a valid project and QA session.</li><li>Delete unneeded screenshots if the Chrome profile is low on storage.</li><li>Copy or export important sessions before clearing data or reinstalling.</li></ul></section>
+      <section><h2>Copy or export failed</h2><ul><li>If Copy JSON fails, use Export JSON.</li><li>If Export JSON fails, use Copy JSON and paste into a local text file.</li><li>Large screenshot-backed sessions produce large JSON files. Split the review into smaller QA sessions if needed.</li></ul></section>
+      <section><h2>Keyboard shortcuts</h2><p>Open Spottr settings, then choose Configure shortcuts. Chrome manages shortcut conflicts, so a key combination already used by another extension may need to be changed.</p></section>
+      <section><h2>Before requesting support</h2><p>Record the Spottr version, Chrome version, page type, steps to reproduce, and the exact on-screen message. Do not send a real export or screenshot unless you have reviewed it for private URLs, tokens, customer data, and other sensitive content.</p><p>Public beta support is provided through the Support link on the Chrome Web Store listing. A permanent public support URL must be configured before publication.</p></section>
+
+      <footer class="page-footer"><a href="welcome.html">Quick start</a><a href="privacy.html">Privacy</a></footer>
+    </main>
+  </body>
+</html>

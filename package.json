@@ -1,0 +1,13 @@
+{
+  "name": "spottr",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first Chrome extension for screenshot-backed frontend QA notes.",
+  "scripts": {
+    "build": "npm run check && npm test && node scripts/package.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

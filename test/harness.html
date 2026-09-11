@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>Spottr selection harness</title></head>
+  <body>
+    <main style="padding: 80px; font: 20px sans-serif">
+      <h1>Spottr selection harness</h1>
+      <p>Pointer events should be intercepted by the full-screen selection host.</p>
+      <button id="start-selection" type="button">Start selection</button>
+      <button id="show-composer" type="button">Show note composer</button>
+      <output id="selection-result" aria-live="polite"></output>
+    </main>
+    <script>
+      window.__spottrMessages = [];
+      window.__spottrListeners = [];
+      window.chrome = {
+        runtime: {
+          getURL: (path) => path,
+          onMessage: { addListener: (listener) => window.__spottrListeners.push(listener) },
+          sendMessage: (message) => {
+            window.__spottrMessages.push(message);
+            const result = document.querySelector("#selection-result");
+            result.textContent = JSON.stringify(message.capture?.selection || message.assignment || message);
+            return Promise.resolve({ ok: true });
+          }
+        }
+      };
+    </script>
+    <script src="../content.js"></script>
+    <script>
+      window.__spottrStartSelection = () => {
+        for (const listener of window.__spottrListeners) listener({ type: "qa-start-selection" });
+      };
+      document.querySelector("#start-selection").addEventListener("click", window.__spottrStartSelection);
+      document.querySelector("#show-composer").addEventListener("click", () => {
+        const workspace = {
+          projects: [
+            {
+              id: "project_store",
+              name: "Storefront",
+              createdAt: "2026-09-05T20:00:00Z",
+              sessions: [
+                { id: "session_home", projectId: "project_store", label: "Homepage pass", createdAt: "2026-09-05T20:00:00Z" },
+                { id: "session_cart", projectId: "project_store", label: "Cart retest", createdAt: "2026-09-05T21:00:00Z" }
+              ]
+            },
+            { id: "project_checkout", name: "Checkout", createdAt: "2026-09-04T20:00:00Z", sessions: [] }
+          ],
+          activeContext: { projectId: "project_store", sessionId: "session_home" },
+          suggestedSessionLabel: "QA 2026-09-05",
+          target: {
+            projectId: "project_store",
+            projectName: "Storefront",
+            environment: "Local",
+            runId: "session_home",
+            runLabel: "Homepage pass"
+          }
+        };
+        for (const listener of window.__spottrListeners) {
+          listener({ type: "qa-show-composer", target: workspace.target, workspace });
+        }
+      });
+    </script>
+  </body>
+</html>

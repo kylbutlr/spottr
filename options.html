@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr settings</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body class="options-page">
+    <main class="options">
+      <p class="eyebrow">SPOTTR SETTINGS</p>
+      <h1>Keyboard shortcut</h1>
+      <p class="empty">Spottr uses Chrome’s command settings so you can choose the key binding that fits your workflow.</p>
+      <p class="shortcut-state">Screenshot capture: <strong id="capture-shortcut">Loading…</strong></p>
+      <p class="shortcut-state">Text-only note: <strong id="note-shortcut">Loading…</strong></p>
+      <button id="configure" class="primary" type="button">Open Chrome shortcut settings</button>
+      <p id="settings-status" class="status" role="status" aria-live="polite"></p>
+      <nav class="help-links" aria-label="Spottr help">
+        <a href="welcome.html" target="_blank">Quick start</a>
+        <a href="support.html" target="_blank">Support</a>
+        <a href="privacy.html" target="_blank">Privacy</a>
+      </nav>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

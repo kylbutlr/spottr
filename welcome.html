@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Spottr</title>
+    <link rel="stylesheet" href="pages.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <div class="brand">
+          <img src="icons/chrome/icon-128.png" alt="">
+          <p class="eyebrow">Spottr public beta</p>
+        </div>
+        <h1>Capture visual QA without the account overhead.</h1>
+        <p class="lede">Spottr turns a selected part of any regular webpage into a screenshot-backed note with the context another person needs to reproduce it.</p>
+        <p class="trust-line"><strong>Your evidence stays in this Chrome profile.</strong> Spottr has no account, server, analytics, or cloud sync. Nothing leaves the browser unless you choose Copy JSON or Export JSON.</p>
+      </header>
+
+      <section class="section" aria-labelledby="quick-start-title">
+        <p class="eyebrow">Quick start</p>
+        <h2 id="quick-start-title">Your first QA session</h2>
+        <ol class="steps">
+          <li><h3>Open a webpage</h3><p>Use a normal http or https page. Chrome blocks extension access on settings, Web Store, and other restricted pages.</p></li>
+          <li><h3>Capture the issue</h3><p>Open Spottr, choose Capture area, then drag a rectangle around the visual problem. Press Escape to cancel.</p></li>
+          <li><h3>Describe what matters</h3><p>Add a short observation, confirm the project and QA session, then save. Use Add text-only note when a screenshot is not useful.</p></li>
+          <li><h3>Organize the pass</h3><p>Keep related notes in one QA session. Create another session for a different review, viewport, or retest.</p></li>
+          <li><h3>Export the evidence</h3><p>Copy or download the active session as JSON. Review the file before sharing because it can contain page URLs and screenshots.</p></li>
+        </ol>
+        <div class="actions">
+          <button id="configure-shortcuts" class="button primary" type="button">Configure shortcuts</button>
+          <a class="button" href="privacy.html">Review privacy details</a>
+          <a class="button" href="support.html">Open troubleshooting</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="captured-title">
+        <p class="eyebrow">Evidence boundary</p>
+        <h2 id="captured-title">What a saved note contains</h2>
+        <table class="data-table">
+          <thead><tr><th>Data</th><th>Why Spottr records it</th></tr></thead>
+          <tbody>
+            <tr><td>Your note</td><td>The issue description you type.</td></tr>
+            <tr><td>Selected screenshot</td><td>A WebP crop of the visible viewport, only for Capture area notes.</td></tr>
+            <tr><td>Page context</td><td>Raw and normalized URL, page title, viewport size, device pixel ratio, scroll position, and selection coordinates.</td></tr>
+            <tr><td>Organization</td><td>Project and QA session names, local identifiers, and capture time.</td></tr>
+          </tbody>
+        </table>
+        <p class="callout"><strong>Capture carefully.</strong> A selected screenshot, page title, URL, or note can contain confidential information. Spottr does not inspect or redact your evidence for you.</p>
+      </section>
+
+      <footer class="page-footer">
+        <span>Spottr 0.2.0</span>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </footer>
+    </main>
+    <script type="module" src="welcome.js"></script>
+  </body>
+</html>

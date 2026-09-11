@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">SPOTTR</p>
+          <h1>Capture frontend feedback</h1>
+        </div>
+        <span id="note-count" class="count">0</span>
+      </header>
+
+      <p class="privacy-summary"><strong>Local by default.</strong> Spottr sends nothing. Data leaves your browser only when you copy or download an export. <a href="privacy.html" target="_blank">Privacy details</a></p>
+
+      <section id="first-use" class="first-use" aria-labelledby="first-use-title">
+        <p class="eyebrow">FIRST CAPTURE</p>
+        <h2 id="first-use-title">Turn a visual issue into useful evidence</h2>
+        <ol>
+          <li>Open a regular http or https webpage.</li>
+          <li>Choose <strong>Capture area</strong>, then drag around the issue.</li>
+          <li>Describe what needs attention and save it to this QA session.</li>
+        </ol>
+      </section>
+
+      <section class="target-card">
+        <div class="workspace-field">
+          <label class="target-label" for="project-select">PROJECT</label>
+          <select id="project-select" aria-label="Active project"></select>
+        </div>
+        <div class="workspace-field">
+          <label class="target-label" for="session-select">QA SESSION</label>
+          <select id="session-select" aria-label="Active QA session"></select>
+        </div>
+        <small id="target-context"></small>
+      </section>
+
+      <div id="workspace-editor" class="project-editor" hidden>
+        <label id="editor-label" class="target-label" for="workspace-name">PROJECT OR SESSION NAME</label>
+        <input id="workspace-name" placeholder="Project name or session label" aria-label="Project or session name" autocomplete="off">
+        <div class="editor-actions">
+          <button id="cancel-editor" class="text-button" type="button">Cancel</button>
+          <button id="save-editor" class="primary compact" type="button">Save</button>
+        </div>
+      </div>
+
+      <div class="capture-actions">
+        <button id="capture" class="capture" type="button">Capture area <span id="shortcut">Not set</span></button>
+        <button id="note-only" class="capture secondary" type="button">Add text-only note <span id="note-shortcut">Not set</span></button>
+      </div>
+
+      <section class="recent">
+        <div class="section-heading">
+          <h2>Saved notes</h2>
+          <div class="section-actions">
+            <button id="copy-json" class="text-button" type="button">Copy JSON</button>
+            <button id="export" class="text-button" type="button">Export JSON</button>
+          </div>
+        </div>
+        <p id="empty" class="empty">No local QA notes yet.</p>
+        <ul id="notes"></ul>
+      </section>
+
+      <div class="cleanup-actions" hidden>
+        <button id="clear-session" class="text-button danger" type="button">Clear session notes</button>
+        <button id="clear-project" class="text-button danger" type="button">Clear project notes</button>
+      </div>
+
+      <button id="configure-shortcut" class="settings-button" type="button">Configure keyboard shortcut</button>
+
+      <nav class="help-links" aria-label="Spottr help">
+        <a href="welcome.html" target="_blank">Quick start</a>
+        <a href="support.html" target="_blank">Support</a>
+        <a href="privacy.html" target="_blank">Privacy</a>
+      </nav>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

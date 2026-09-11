@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr privacy</title>
+    <link rel="stylesheet" href="pages.css">
+  </head>
+  <body>
+    <main class="page prose">
+      <header class="page-header">
+        <p class="eyebrow">Spottr privacy</p>
+        <h1>Local-first means your QA evidence stays yours.</h1>
+        <p class="lede">Effective September 10, 2026. This page describes Spottr public beta version 0.2.0.</p>
+      </header>
+
+      <section><h2>What Spottr handles</h2><p>When you save a note, Spottr stores the text you enter; the selected screenshot crop, if any; the page URL and a normalized version with common temporary token parameters removed; page title; viewport size; device pixel ratio; scroll position; selection coordinates; project and QA session names and identifiers; and timestamps.</p></section>
+      <section><h2>Where data is stored</h2><p>Notes and screenshots are stored in IndexedDB inside Spottr’s Chrome extension storage. Project, session, and active-workspace state are stored in <code>chrome.storage.local</code>. The data is local to the Chrome profile where Spottr is installed. Spottr does not use <code>storage.sync</code>.</p></section>
+      <section><h2>What leaves the browser</h2><p>Spottr has no developer-operated server, account system, cloud sync, analytics, advertising, or telemetry. It does not automatically transmit saved evidence. Data leaves Spottr only when you intentionally copy an export to the clipboard, download an export file, or share either result using another tool.</p></section>
+      <section><h2>Retention and deletion</h2><p>Spottr does not automatically expire saved data. A note remains until you delete it, clear its QA session or project, remove Spottr’s extension data in Chrome, or uninstall the extension. Deleting a note also deletes its locally stored screenshot. Clearing notes keeps the empty project and session until you explicitly delete those containers.</p></section>
+      <section><h2>Access and permissions</h2><p>Spottr receives temporary access to the active webpage only after you click a capture action or use a configured shortcut. It uses that access to display the capture and note interface, read the page URL and title, and capture the visible viewport. It does not request persistent access to every website.</p></section>
+      <section><h2>Your responsibility when sharing</h2><p>Screenshots, URLs, page titles, and written notes can contain confidential or personal information. Review and redact exported evidence before sharing it. Spottr does not automatically detect secrets or sensitive content.</p></section>
+      <section><h2>Chrome Web Store Limited Use disclosure</h2><p>Spottr’s handling of user data is limited to providing its single purpose: user-initiated capture, organization, local review, and export of frontend QA evidence. Spottr does not sell user data, use it for advertising or creditworthiness, transfer it to third parties, or permit human access by the developer.</p></section>
+      <section><h2>Changes and questions</h2><p>If Spottr’s data handling changes, this notice and the Chrome Web Store privacy disclosures must be updated before that change is published. For help, use the Support link on Spottr’s Chrome Web Store listing and review the <a href="support.html">local troubleshooting guide</a>.</p></section>
+
+      <footer class="page-footer"><a href="welcome.html">Quick start</a><a href="support.html">Support</a></footer>
+    </main>
+  </body>
+</html>

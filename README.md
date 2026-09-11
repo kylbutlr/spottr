@@ -4,11 +4,13 @@ Capture clear, reproducible visual QA feedback directly in Chrome, without creat
 
 Spottr is a local-first Chrome extension for developers, designers, and QA practitioners. Select part of a webpage, describe the issue, organize related notes into a QA session, then copy or download the evidence as JSON.
 
-## Public beta status
+[Product overview](https://kylbutlr.com/apps/spottr) · [Report an issue](https://github.com/kylbutlr/spottr/issues)
 
-Spottr 0.2.0 is being prepared for a public Chrome Web Store beta. The extension package can be built and tested locally, but it has not been published to the Chrome Web Store yet.
+## Status
 
-## What Spottr does
+Spottr 0.2.0 is public source software being prepared for a Chrome Web Store beta. It can be built and loaded locally, but it has not been published to the Chrome Web Store.
+
+## Highlights
 
 - Captures a rectangle from the visible webpage as a cropped WebP screenshot
 - Creates text-only notes when a screenshot is not useful
@@ -24,6 +26,22 @@ Spottr does not include accounts, cloud synchronization, team collaboration, bil
 
 ## Quick start
 
+### Install for local testing
+
+Spottr requires Chrome 102 or newer.
+
+1. Download or clone this repository.
+2. Run `npm test` and `npm run check`.
+3. Open `chrome://extensions`.
+4. Enable **Developer mode**.
+5. Choose **Load unpacked** and select this repository directory.
+6. Reload any webpage that was already open.
+7. Pin Spottr from Chrome's Extensions menu.
+
+Keyboard commands are intentionally unassigned. Use **Configure keyboard shortcut** in Spottr or open `chrome://extensions/shortcuts` to choose bindings that do not conflict with another extension.
+
+### Capture a QA session
+
 1. Open a regular http or https webpage.
 2. Open Spottr and choose **Capture area**.
 3. Drag around the issue. Press Escape if you want to cancel.
@@ -33,20 +51,7 @@ Spottr does not include accounts, cloud synchronization, team collaboration, bil
 
 The first saved note creates the suggested project and QA session. Projects persist across pages and tokenized preview URLs, so a changing preview parameter does not silently move your notes into a different workspace.
 
-## Install for local testing
-
-Spottr requires Chrome 102 or newer.
-
-1. Run `npm test` and `npm run check`.
-2. Open `chrome://extensions`.
-3. Enable **Developer mode**.
-4. Choose **Load unpacked** and select this repository directory.
-5. Reload any webpage that was already open.
-6. Open Spottr from the extensions menu and complete the first capture.
-
-Keyboard commands are intentionally unassigned. Use **Configure keyboard shortcut** in Spottr or open `chrome://extensions/shortcuts` to choose bindings that do not conflict with another extension.
-
-## Privacy at a glance
+## Privacy and permissions
 
 Spottr has no developer-operated server and makes no network requests. Notes and screenshots remain in the Chrome profile where they were captured. Data leaves Spottr only when the user explicitly copies or downloads an export and then chooses to share it.
 
@@ -54,7 +59,7 @@ Screenshots, page titles, URLs, and notes can still contain sensitive informatio
 
 Read the complete [privacy notice](PRIVACY.md) and [support and troubleshooting guide](SUPPORT.md).
 
-## Browser permissions
+### Browser permissions
 
 | Permission | Why Spottr needs it |
 | --- | --- |
@@ -79,7 +84,7 @@ See the [export format reference](docs/export-format.md) and [safe redacted exam
 - Data does not expire automatically. Delete notes, clear a session or project, remove extension data, or uninstall Spottr to remove it.
 - Very large screenshot-backed sessions may exceed browser storage or clipboard limits. Split them into smaller QA sessions when necessary.
 
-## Development and release
+## Development
 
 ```sh
 npm test
@@ -91,9 +96,19 @@ npm run build
 
 Read the [release and packaging guide](docs/releasing.md), [Chrome Web Store listing draft](docs/chrome-web-store-listing.md), and [domain context](CONTEXT.md).
 
+Packaging creates an artifact but does not publish a GitHub release or Chrome Web Store listing.
+
+## App Stylr
+
+Spottr follows [App Stylr v1.0.0](https://github.com/kylbutlr/app-stylr/tree/v1.0.0). The extension uses generated semantic tokens and bundled Geist fonts, and keeps its injected interface inside Shadow DOM so host-page styles cannot rewrite it.
+
+Review the [App Stylr Visual Reference](https://app-stylr.netlify.app/) before interface changes. Intentional differences are documented in [docs/app-stylr-exceptions.md](docs/app-stylr-exceptions.md).
+
 ## Support
 
-Start with [SUPPORT.md](SUPPORT.md). Public support and privacy URLs must be configured in the Chrome Web Store listing before publication.
+Start with [SUPPORT.md](SUPPORT.md) or open a report in the [public issue tracker](https://github.com/kylbutlr/spottr/issues). Do not include credentials, private URLs, or confidential screenshots and exports.
+
+The public issue tracker and final privacy URL still need to be configured in the Chrome Web Store listing before store publication.
 
 ## License
 

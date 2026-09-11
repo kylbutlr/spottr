@@ -51,4 +51,4 @@ Record:
 
 Do not share a real export or screenshot until it has been reviewed for private URLs, access tokens, customer data, and other sensitive content.
 
-Public beta support will be provided through the Support link on Spottr's Chrome Web Store listing. A permanent public support URL must be selected before publication.
+Public beta support is available through the [Spottr issue tracker](https://github.com/kylbutlr/spottr/issues). Configure that public destination as the Chrome Web Store support URL before store publication.

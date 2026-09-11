@@ -74,11 +74,11 @@ Declare that all handling is for app functionality; data is not sold, used for a
 
 ## Required URLs
 
-- **Homepage URL:** Pending a public location approved by the publisher
-- **Privacy policy URL:** Pending a public location for `PRIVACY.md` or equivalent hosted content
-- **Support URL:** Pending a public location for `SUPPORT.md` or the publisher's chosen support page
+- **Homepage URL:** [Spottr product overview](https://kylbutlr.com/apps/spottr)
+- **Privacy policy URL:** [Public Spottr privacy notice](https://github.com/kylbutlr/spottr/blob/main/PRIVACY.md), subject to final publisher approval and live-dashboard validation
+- **Support URL:** [Public Spottr issue tracker](https://github.com/kylbutlr/spottr/issues)
 
-The repository is currently private, so repository links are not valid public listing URLs unless repository visibility is changed with explicit approval.
+The repository and issue tracker are public. Confirm that the final privacy and support destinations satisfy the live Developer Dashboard before submitting the listing.
 
 ## Graphic asset checklist
 

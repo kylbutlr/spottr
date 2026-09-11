@@ -7,6 +7,8 @@ const manifest = JSON.parse(readFileSync(new URL("../manifest.json", import.meta
 const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 const example = JSON.parse(readFileSync(new URL("../docs/export-example.json", import.meta.url), "utf8"));
 const appStylr = JSON.parse(readFileSync(new URL("../app-stylr.json", import.meta.url), "utf8"));
+const releaseGuide = readFileSync(new URL("../docs/releasing.md", import.meta.url), "utf8");
+const storeListing = readFileSync(new URL("../docs/chrome-web-store-listing.md", import.meta.url), "utf8");
 
 test("release versions stay aligned and the package is a public runtime allowlist", () => {
   assert.equal(manifest.version, packageJson.version);
@@ -29,6 +31,13 @@ test("the public repository uses MIT and pins App Stylr v1", () => {
     readFileSync(new URL("../styles/app-stylr.css", import.meta.url), "utf8"),
     /--app-stylr-version: "1\.0\.0"/u,
   );
+});
+
+test("public release documentation matches the repository and checksum workflow", () => {
+  assert.match(releaseGuide, /cd dist\nshasum -a 256 -c spottr-v0\.2\.0\.zip\.sha256/u);
+  assert.doesNotMatch(storeListing, /repository is currently private/u);
+  assert.match(storeListing, /https:\/\/kylbutlr\.com\/apps\/spottr/u);
+  assert.match(storeListing, /https:\/\/github\.com\/kylbutlr\/spottr\/issues/u);
 });
 
 test("the published export example is safe and follows schema version 1", () => {

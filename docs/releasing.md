@@ -4,7 +4,7 @@ Publishing is a separate, approval-gated action. Building and inspecting a packa
 
 ## Verified repository flow
 
-As of September 10, 2026, the GitHub default and integration branch is `main`. The three existing pull requests were feature branches merged into `main`. The repository has no GitHub releases, release tags, or release workflow. The first public beta release process is therefore manual until an approved automation is added.
+As of September 11, 2026, the GitHub default and integration branch is `main`. Feature branches are merged into `main` through pull requests. The repository has no GitHub releases, release tags, or release workflow. The first public beta release process is therefore manual until an approved automation is added.
 
 ## Build the package
 
@@ -37,7 +37,8 @@ Verify archive integrity and checksum:
 
 ```sh
 unzip -t dist/spottr-v0.2.0.zip
-shasum -a 256 -c dist/spottr-v0.2.0.zip.sha256
+cd dist
+shasum -a 256 -c spottr-v0.2.0.zip.sha256
 ```
 
 Run `npm run package` a second time without source changes and verify that the SHA-256 value is unchanged.

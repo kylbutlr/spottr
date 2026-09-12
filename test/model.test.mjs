@@ -35,7 +35,7 @@ test("derives the same project identity across preview-token URLs", () => {
   assert.equal(first.runLabel, "QA 2026-09-03");
 });
 
-test("creates an agent export ordered by capture time", () => {
+test("creates a QA export ordered by capture time", () => {
   const target = createTarget({ projectName: "Storefront", environment: "Local", runLabel: "mobile QA" });
   const later = createNote({ target, message: "Later", pageUrl: "http://localhost:3000/b", createdAt: "2026-09-03T02:00:00.000Z" });
   const earlier = createNote({ target, message: "Earlier", pageUrl: "http://localhost:3000/a", createdAt: "2026-09-03T01:00:00.000Z" });

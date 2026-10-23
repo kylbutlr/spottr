@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-09-10T18:45:00.000Z",
+  "target": {
+    "projectId": "project_example_test",
+    "projectName": "Example storefront",
+    "environment": "Web preview",
+    "runId": "session_mobile_review",
+    "runLabel": "Mobile review"
+  },
+  "notes": [
+    {
+      "id": "note_example_001",
+      "projectId": "project_example_test",
+      "projectName": "Example storefront",
+      "environment": "Web preview",
+      "runId": "session_mobile_review",
+      "runLabel": "Mobile review",
+      "message": "The primary action overlaps the product title at this viewport.",
+      "url": "https://example.test/products/sample?color=blue",
+      "normalizedUrl": "https://example.test/products/sample?color=blue",
+      "pageTitle": "Example product",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "scroll": {
+        "x": 0,
+        "y": 612
+      },
+      "selection": {
+        "x": 24,
+        "y": 180,
+        "width": 342,
+        "height": 156
+      },
+      "screenshot": {
+        "mimeType": "image/webp",
+        "data": "data:image/webp;base64,REDACTED_FOR_DOCUMENTATION"
+      },
+      "createdAt": "2026-09-10T18:42:00.000Z"
+    },
+    {
+      "id": "note_example_002",
+      "projectId": "project_example_test",
+      "projectName": "Example storefront",
+      "environment": "Web preview",
+      "runId": "session_mobile_review",
+      "runLabel": "Mobile review",
+      "message": "Keyboard focus is not visible on the size selector.",
+      "url": "https://example.test/products/sample?color=blue",
+      "normalizedUrl": "https://example.test/products/sample?color=blue",
+      "pageTitle": "Example product",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 2
+      },
+      "scroll": {
+        "x": 0,
+        "y": 612
+      },
+      "selection": null,
+      "screenshot": null,
+      "createdAt": "2026-09-10T18:44:00.000Z"
+    }
+  ]
+}

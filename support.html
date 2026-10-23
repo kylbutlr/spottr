@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr support</title>
+    <link rel="stylesheet" href="pages.css">
+  </head>
+  <body>
+    <main class="page prose">
+      <header class="page-header">
+        <a class="brand-link" href="welcome.html">Spottr</a>
+        <h1>Get back to capturing.</h1>
+        <p class="lede">Most Spottr problems come from Chrome restricting the current page, the page changing during capture, or the local browser profile running short on storage.</p>
+      </header>
+
+      <section><h2>Install a GitHub download</h2><p>Download the Spottr extension ZIP from <a href="https://github.com/kylbutlr/spottr/releases" target="_blank" rel="noreferrer">GitHub Releases</a> and extract it into a permanent folder. Open <code>chrome://extensions</code>, enable Developer mode, then choose Load unpacked and select the folder containing <code>manifest.json</code>. No Node.js installation is needed.</p></section>
+      <section><h2>Update an existing installation</h2><p>Updates are manual. Export important sessions, finish any open capture, then replace the files inside your existing installation folder with the new release. Keep the same folder path and choose Reload on the existing Spottr card in <code>chrome://extensions</code>. Do not uninstall to update. Spottr has no import feature; an export preserves readable evidence but cannot restore a session into the extension.</p></section>
+      <section><h2>Capture will not start</h2><ul><li>On another extension’s page, choose Capture area for a screenshot or Add text-only note without one. Spottr opens its own editor because Chrome prevents Spottr from placing controls inside that page.</li><li>If Chrome hides the page URL or title, add them in the editor if needed.</li><li>If Chrome denies the screenshot itself, try a normal http or https page.</li><li>For a local <code>file://</code> page, serve the file over localhost. Spottr does not request file access.</li><li>Reload a page that was already open when Spottr was installed, then retry.</li></ul></section>
+      <section><h2>The screenshot is missing or wrong</h2><ul><li>Keep the target tab active until the note composer appears.</li><li>Spottr captures only the visible viewport, not a full scrolling page.</li><li>If the page zoom, viewport, or browser window changes mid-capture, cancel with Escape and start again.</li></ul></section>
+      <section><h2>A note will not save</h2><ul><li>Add a note description and select a valid project and QA session.</li><li>Delete unneeded screenshots if the Chrome profile is low on storage.</li><li>Copy or export important sessions before clearing data or reinstalling.</li></ul></section>
+      <section><h2>Copy or export failed</h2><ul><li>If Copy JSON fails, use Export JSON.</li><li>If Export JSON fails, use Copy JSON and paste into a local text file.</li><li>Large screenshot-backed sessions produce large JSON files. Split the review into smaller QA sessions if needed.</li></ul></section>
+      <section><h2>Keyboard shortcuts</h2><p>Open Spottr settings, then choose Configure shortcuts. Chrome manages shortcut conflicts, so a key combination already used by another extension may need to be changed.</p></section>
+      <section><h2>Before requesting support</h2><p>Record the Spottr version, Chrome version, page type, steps to reproduce, and the exact on-screen message. Do not send a real export or screenshot unless you have reviewed it for private URLs, tokens, customer data, and other sensitive content.</p><p>Report reproducible problems through the <a href="https://github.com/kylbutlr/spottr/issues" target="_blank" rel="noreferrer">Spottr issue tracker</a>.</p></section>
+
+      <footer class="page-footer"><a href="welcome.html">Quick start</a><a href="privacy.html">Privacy</a></footer>
+    </main>
+  </body>
+</html>

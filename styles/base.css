@@ -1,0 +1,18 @@
+@import url("app-stylr.css");
+@import url("fonts.css");
+
+:root { color: var(--ui-text); background: var(--ui-canvas); font-family: var(--font-sans); font-synthesis: none; text-rendering: optimizeLegibility; scrollbar-color: var(--ui-border-strong) var(--ui-canvas); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+::selection { color: var(--ui-selected-text); background: var(--ui-selected); }
+body { margin: 0; }
+a { color: var(--ui-link); text-underline-offset: 3px; }
+a:hover { color: var(--ui-accent-strong); }
+button, input, select, textarea { font: inherit; }
+input, textarea { caret-color: var(--ui-accent); }
+input::placeholder, textarea::placeholder { color: var(--ui-text-muted); opacity: 1; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
+button:disabled { cursor: default; opacity: .55; }
+button:not(:disabled):hover { filter: brightness(1.08); }
+button:not(:disabled):active { filter: brightness(.95); }
+button[aria-busy="true"] { cursor: wait; }

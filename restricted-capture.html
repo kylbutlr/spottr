@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr screenshot capture</title>
+    <link rel="stylesheet" href="restricted-capture.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="capture-brand" href="welcome.html">Spottr</a>
+        <h1>Select an area of the captured page</h1>
+        <p>Chrome keeps this page’s content separate from Spottr. Drag on the screenshot below, then add your QA note.</p>
+      </header>
+      <section class="details" aria-label="Page context">
+        <label>Page URL <span>Optional when Chrome hides it</span><input id="page-url" type="url" placeholder="Paste the page URL if available" spellcheck="false"></label>
+        <label>Page title <span>Optional</span><input id="page-title" type="text" placeholder="Name this page" spellcheck="false"></label>
+      </section>
+      <div class="actions">
+        <button id="use-full" type="button">Use full screenshot</button>
+        <button id="discard" type="button" class="secondary">Discard screenshot</button>
+      </div>
+      <p id="status" role="status" aria-live="polite">Loading screenshot…</p>
+      <div id="capture-stage" class="capture-stage" hidden>
+        <img id="screenshot" alt="Captured visible tab. Drag to choose the area for your QA note.">
+        <div id="selection" aria-hidden="true" hidden></div>
+      </div>
+    </main>
+    <script src="content.js"></script>
+    <script type="module" src="restricted-capture.js"></script>
+  </body>
+</html>

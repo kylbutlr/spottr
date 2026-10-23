@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr privacy</title>
+    <link rel="stylesheet" href="pages.css">
+  </head>
+  <body>
+    <main class="page prose">
+      <header class="page-header">
+        <a class="brand-link" href="welcome.html">Spottr</a>
+        <h1>Your evidence stays local.</h1>
+        <p class="lede">Effective October 22, 2026. This notice covers Spottr’s downloadable Chrome extension.</p>
+      </header>
+
+      <section><h2>What Spottr handles</h2><p>When you save a note, Spottr stores the text you enter; the selected screenshot crop, if any; the page URL and title when Chrome provides them or you enter them; available viewport and scroll details; selection coordinates; project and QA session names and identifiers; and timestamps. The URL is also normalized with common temporary token parameters removed.</p></section>
+      <section><h2>Where data is stored</h2><p>Notes and screenshots are stored in IndexedDB inside Spottr’s Chrome extension storage. Project, session, and active-workspace state are stored in <code>chrome.storage.local</code>. The data is local to the Chrome profile where Spottr is installed. Spottr does not use <code>storage.sync</code>. For Capture area on restricted pages, a full visible-tab screenshot is held as a temporary local draft while you choose an area. Add text-only note takes no screenshot. Saving or discarding removes the draft; a new capture replaces an unfinished one. Closing the editor alone leaves the draft until the next capture or extension-data removal.</p></section>
+      <section><h2>What leaves the browser</h2><p>Spottr has no developer-operated server, account system, cloud sync, analytics, advertising, or telemetry. It does not automatically transmit saved evidence. Data leaves Spottr only when you intentionally copy an export to the clipboard, download an export file, or share either result using another tool.</p></section>
+      <section><h2>Retention and deletion</h2><p>Spottr does not automatically expire saved data. A note remains until you delete it, clear its QA session or project, remove Spottr’s extension data in Chrome, or uninstall the extension. Deleting a note also deletes its locally stored screenshot. Clearing notes keeps the empty project and session until you explicitly delete those containers.</p></section>
+      <section><h2>Access and permissions</h2><p>Spottr receives temporary access to the active tab only after you click a capture action or use a configured shortcut. On regular webpages, it displays an in-page capture interface. On restricted pages, it opens Spottr’s own editor without reading the page DOM. It uses Chrome’s screenshot API only when you choose Capture area. Chrome may withhold the source URL and title. Spottr does not request persistent access to every website.</p></section>
+      <section><h2>Your responsibility when sharing</h2><p>Screenshots, URLs, page titles, and written notes can contain confidential or personal information. Review and redact exported evidence before sharing it. Spottr does not automatically detect secrets or sensitive content.</p></section>
+      <section><h2>Use of captured data</h2><p>Spottr’s handling of user data is limited to providing its single purpose: user-initiated capture, organization, local review, and export of frontend QA evidence. Spottr does not sell user data, use it for advertising or creditworthiness, transfer it to third parties, or permit human access by the developer.</p></section>
+      <section><h2>Changes and questions</h2><p>If Spottr’s data handling changes, this notice must be updated before that change is published. For help, visit the <a href="https://github.com/kylbutlr/spottr/issues" target="_blank" rel="noreferrer">Spottr issue tracker</a> or review the <a href="support.html">local troubleshooting guide</a>.</p></section>
+
+      <footer class="page-footer"><a href="welcome.html">Quick start</a><a href="support.html">Support</a></footer>
+    </main>
+  </body>
+</html>

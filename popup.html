@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spottr</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="popup-header">
+        <img src="icons/chrome/icon-48.png" width="36" height="36" alt="">
+        <div><h1>Spottr</h1><p>Visual feedback, with context.</p></div>
+      </header>
+
+      <section class="target-card" aria-label="Active workspace">
+        <div class="workspace-field">
+          <label class="target-label" for="project-select">Project</label>
+          <select id="project-select" aria-label="Active project"></select>
+        </div>
+        <div class="workspace-field">
+          <label class="target-label" for="session-select">QA session</label>
+          <select id="session-select" aria-label="Active QA session"></select>
+        </div>
+        <small id="target-context"></small>
+      </section>
+
+      <div id="workspace-editor" class="project-editor" hidden>
+        <label id="editor-label" class="target-label" for="workspace-name">Project or session name</label>
+        <input id="workspace-name" placeholder="Project name or session label" aria-label="Project or session name" autocomplete="off">
+        <div class="editor-actions">
+          <button id="cancel-editor" class="text-button" type="button">Cancel</button>
+          <button id="save-editor" class="primary compact" type="button">Save</button>
+        </div>
+      </div>
+
+      <div class="capture-actions">
+        <button id="capture" class="capture" type="button">Capture area <span id="shortcut">Not set</span></button>
+        <button id="note-only" class="capture secondary" type="button">Add text-only note <span id="note-shortcut">Not set</span></button>
+      </div>
+
+      <section id="first-use" class="first-use" aria-labelledby="first-use-title">
+        <h2 id="first-use-title">Start with one observation</h2>
+        <p>Choose Capture area, drag around an issue, then describe it. Your first saved note creates the project and QA session.</p>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section class="recent" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <h2 id="notes-title">Saved notes <span id="note-count" class="count" aria-label="Notes in this session">0</span></h2>
+          <div class="section-actions">
+            <button id="copy-json" class="text-button" type="button" disabled>Copy JSON</button>
+            <button id="export" class="text-button" type="button" disabled>Export JSON</button>
+          </div>
+        </div>
+        <p id="empty" class="empty">No notes in this session. Capture an issue or add a text-only note to get started.</p>
+        <ul id="notes"></ul>
+      </section>
+
+      <div class="cleanup-actions" hidden>
+        <button id="clear-session" class="text-button danger" type="button">Clear session notes</button>
+        <button id="clear-project" class="text-button danger" type="button">Clear project notes</button>
+      </div>
+
+      <footer class="popup-footer">
+        <p class="privacy-summary"><strong>Local by default.</strong> Notes stay in this Chrome profile until you copy or download an export.</p>
+        <button id="configure-shortcut" class="settings-button" type="button">Keyboard shortcuts</button>
+        <nav class="help-links" aria-label="Spottr help">
+          <a href="welcome.html" target="_blank" rel="noreferrer">Quick start</a>
+          <a href="support.html" target="_blank" rel="noreferrer">Support</a>
+          <a href="privacy.html" target="_blank" rel="noreferrer">Privacy</a>
+        </nav>
+      </footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

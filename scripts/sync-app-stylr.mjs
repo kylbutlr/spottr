@@ -29,6 +29,9 @@ files.set("content.js", Buffer.from(content.replace(pattern, `  // BEGIN GENERAT
 const iconOutput = join(root, "dist/app-stylr-icons");
 execFileSync(process.execPath, [join(upstream, "scripts/generate-icons.mjs"), "--source", join(root, "assets/app-icon.svg"), "--output", iconOutput], { stdio: "pipe", cwd: root });
 for (const name of ["chrome/icon-16.png","chrome/icon-32.png","chrome/icon-48.png","chrome/icon-128.png","web/favicon-32.png","web/apple-touch-icon-152.png","web/apple-touch-icon-167.png","web/apple-touch-icon-180.png","web/apple-touch-icon.png","web/icon-192.png","web/icon-512.png"]) files.set(`icons/${name}`, await readFile(join(iconOutput, name)));
+// The pinned generator renders this 512px PNG directly from the SVG master.
+files.set("icons/chrome/icon-512.png", await readFile(join(iconOutput, "web/icon-512.png")));
+
 for (const [name, content] of files) {
  const target = join(root, name);
  if (check) { if (!(await readFile(target)).equals(content)) throw new Error(`${name} differs from the pinned source; run npm run styles`); }

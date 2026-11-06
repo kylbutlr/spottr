@@ -2,7 +2,7 @@
   "capturedAt": "2026-11-06T06:41:37.299Z",
   "sourceVersion": "1.1.0",
   "sourceRevision": "0e7109b399719eba989c1843d3cb384801edebba",
-  "releaseStatus": "Unpublished visual-refresh candidate",
+  "releaseStatus": "Captured from a pre-release visual-refresh build; sourceRevision identifies the exact capture source.",
   "appStylrVersion": "1.4.1",
   "fictionalData": true,
   "capture": {

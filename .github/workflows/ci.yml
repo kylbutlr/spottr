@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version-file: .nvmrc
+      - run: npm ci
       - run: npm run build
       - name: Verify package integrity
         working-directory: dist

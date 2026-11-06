@@ -29,7 +29,9 @@ function createRoot(className) {
   host.spottrPreviousFocus = document.activeElement;
   host.style.setProperty("all", "initial");
   host.style.setProperty("z-index", "2147483647");
+  // BEGIN GENERATED APP STYLR SHADOW TOKENS
   host.style.setProperty("--ui-canvas", "#0E0E10");
+  host.style.setProperty("--ui-sidebar", "#121214");
   host.style.setProperty("--ui-surface", "#151517");
   host.style.setProperty("--ui-surface-raised", "#202023");
   host.style.setProperty("--ui-border", "#2A2A2E");
@@ -38,13 +40,26 @@ function createRoot(className) {
   host.style.setProperty("--ui-text-muted", "#A7A7AE");
   host.style.setProperty("--ui-accent", "#A9CEC2");
   host.style.setProperty("--ui-accent-text", "#111111");
+  host.style.setProperty("--ui-accent-strong", "#C3E3D9");
+  host.style.setProperty("--ui-link", "#A9CEC2");
+  host.style.setProperty("--ui-focus", "#A9CEC2");
   host.style.setProperty("--ui-selected", "#263D39");
+  host.style.setProperty("--ui-selected-text", "#F5F4F3");
+  host.style.setProperty("--ui-success", "#82D3A7");
+  host.style.setProperty("--ui-success-surface", "#173126");
+  host.style.setProperty("--ui-warning", "#F2C46F");
+  host.style.setProperty("--ui-warning-surface", "#352B18");
   host.style.setProperty("--ui-danger", "#FF9189");
-  host.style.setProperty("--font-sans", '"Geist Sans", -apple-system, BlinkMacSystemFont, sans-serif');
-  host.style.setProperty("--font-mono", '"Geist Mono", ui-monospace, monospace');
-  host.style.setProperty("--radius-control", "8px");
-  host.style.setProperty("--radius-button", "9px");
-  host.style.setProperty("--radius-dialog", "16px");
+  host.style.setProperty("--ui-danger-surface", "#38201F");
+  host.style.setProperty("--ui-info", "#A9CEC2");
+  host.style.setProperty("--ui-info-surface", "#1C302D");
+  host.style.setProperty("--radius-control", "4px");
+  host.style.setProperty("--radius-card", "8px");
+  host.style.setProperty("--radius-dialog", "12px");
+  host.style.setProperty("--radius-button", "4px");
+  host.style.setProperty("--font-sans", "\"Geist Sans\", Inter, ui-sans-serif, system-ui, sans-serif");
+  host.style.setProperty("--font-mono", "\"Geist Mono\", ui-monospace, SFMono-Regular, Consolas, monospace");
+  // END GENERATED APP STYLR SHADOW TOKENS
   document.documentElement.append(host);
   const shadow = host.attachShadow({ mode: "open" });
   const reset = document.createElement("style");
@@ -69,7 +84,7 @@ function button(label, kind = "primary") {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "40px",
+    minHeight: "44px",
     borderRadius: "var(--radius-button)",
     padding: "9px 13px",
     background: kind === "primary" ? "var(--ui-accent)" : "var(--ui-surface-raised)",
@@ -121,7 +136,7 @@ function showNotice(message) {
   const title = document.createElement("h2");
   title.id = "spottr-notice-title";
   title.textContent = "Capture unavailable";
-  style(title, { margin: "0 0 8px", font: "700 18px var(--font-sans)" });
+  style(title, { margin: "0 0 8px", font: "600 18px var(--font-sans)" });
   const copy = document.createElement("p");
   copy.textContent = message;
   style(copy, { margin: "0 0 16px", color: "var(--ui-text-muted)", font: "400 14px/1.45 var(--font-sans)" });
@@ -353,7 +368,7 @@ async function showComposer(message) {
   const heading = document.createElement("h2");
   heading.id = "spottr-composer-title";
   heading.textContent = "Add QA note";
-  style(heading, { font: "650 20px/28px var(--font-sans)", margin: "0 0 8px" });
+  style(heading, { font: "600 20px/28px var(--font-sans)", margin: "0 0 8px" });
   panel.append(heading);
 
   const NEW_PROJECT_VALUE = "__new_project__";
@@ -396,7 +411,7 @@ async function showComposer(message) {
     display: "block",
     width: "100%",
     minWidth: "0",
-    minHeight: "40px",
+    minHeight: "44px",
     padding: "8px 9px",
     border: "1px solid var(--ui-border-strong)",
     borderRadius: "var(--radius-control)",

@@ -26,11 +26,11 @@ test("release versions stay aligned and the package is a public runtime allowlis
 
 test("the public repository uses MIT and pins App Stylr v1", () => {
   assert.match(readFileSync(new URL("../LICENSE", import.meta.url), "utf8"), /MIT License/u);
-  assert.equal(appStylr.version, "1.2.0");
-  assert.equal(appStylr.release, "https://github.com/kylbutlr/app-stylr/tree/b3ca31ea264d5dd233fd871ac167247f1c306985");
+  assert.equal(appStylr.version, "1.4.1");
+  assert.equal(appStylr.release, "https://github.com/kylbutlr/app-stylr/tree/v1.4.1");
   assert.match(
     readFileSync(new URL("../styles/app-stylr.css", import.meta.url), "utf8"),
-    /--app-stylr-version: "1\.2\.0"/u,
+    /--app-stylr-version: "1\.4\.1"/u,
   );
 });
 
@@ -51,7 +51,7 @@ test("all local HTML and CSS dependencies are included in the runtime package", 
       : [...source.matchAll(/url\(["']?([^"')]+)["']?\)/gu)].map((match) => match[1]);
     for (const reference of references) {
       if (/^(?:[a-z]+:|#)/iu.test(reference)) continue;
-      const dependency = posix.normalize(posix.join(posix.dirname(path), reference));
+      const dependency = posix.normalize(posix.join(posix.dirname(path), reference.split(/[?#]/u)[0]));
       assert.ok(PACKAGE_FILES.includes(dependency), `${path} depends on unpackaged file ${dependency}`);
     }
   }

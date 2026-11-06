@@ -4,15 +4,15 @@ Spottr is distributed as a free downloadable Chrome extension through [GitHub Re
 
 ## Build and inspect
 
-Use a clean checkout of the intended release commit, Node.js 22, npm, and the `zip` command. Keep the manifest and package versions aligned. Each release should have a distinct version and tag. The first stable release uses GitHub tag `v1.0.0`, manifest/package version `1.0.0`, and download `spottr-v1.0.0.zip`. The Quick start page reads the extension version directly from the manifest.
+Use a clean checkout of the intended release commit, Node.js 22, npm, and the `zip` command. Keep the manifest and package versions aligned. Each release should have a distinct version and tag. The first stable release uses GitHub tag `v1.0.0`, manifest/package version `1.0.0`, and download `spottr-v1.1.0.zip`. The Quick start page reads the extension version directly from the manifest.
 
 ```sh
 nvm use
 npm run build
-unzip -Z1 dist/spottr-v1.0.0.zip
-unzip -t dist/spottr-v1.0.0.zip
+unzip -Z1 dist/spottr-v1.1.0.zip
+unzip -t dist/spottr-v1.1.0.zip
 cd dist
-shasum -a 256 -c spottr-v1.0.0.zip.sha256
+shasum -a 256 -c spottr-v1.1.0.zip.sha256
 ```
 
 The example uses the current manifest version, 1.0.0. Substitute the selected release version after updating both version files. Use `sha256sum` for checksum verification on Linux.

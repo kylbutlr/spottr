@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-11-06T06:41:37.299Z",
+  "sourceVersion": "1.1.0",
+  "sourceRevision": "0e7109b399719eba989c1843d3cb384801edebba",
+  "releaseStatus": "Captured from a pre-release visual-refresh build; sourceRevision identifies the exact capture source.",
+  "appStylrVersion": "1.4.1",
+  "fictionalData": true,
+  "capture": {
+    "width": 1100,
+    "height": 760,
+    "method": "One isolated headless Chrome tab, viewport-only PNG frames of actual owning-repository frontend files."
+  },
+  "animation": {
+    "width": 960,
+    "height": 663,
+    "frames": 11,
+    "durationMs": 5820
+  },
+  "source": "Actual popup and injected Shadow DOM composer. Typing and saving updates fictional notes through an isolated in-memory browser API adapter. Composer edges stayed stable in ten typing frames.",
+  "edits": "Viewport screenshots resized and GIF/WebP encoded, with presentation pauses. No text replacement, retouching or invented product controls. Recording controls stay outside the exported viewport.",
+  "coverageLimits": "No installed-extension, native toolbar anchoring, native permissions, service-worker restart, real tab manipulation or stable-browser release acceptance is established by these captures.",
+  "rawFrameSHA256": [
+    "99ca8ee6e4dc41e9481f8172cf0304c81f937a50d1d5994471bc1252210fa439",
+    "a3695845df3077bd96f075a1fed0b3b01e7b12a2dfd2c988b722bf7053199871",
+    "4b38b5c5b796a64195c6257a934148849b546c0fa27482e0e2c87bb113a203a6",
+    "a0b4ee1ea0c8a61e0d055ed40a8b131ac5021cdd2e12381fcac70967b8c32dd5",
+    "4412e2d6de8ab54e8ac70ba5cf396ad7f9327c643dafcd9acae2862a78bf1e20",
+    "3a2be40b485ddb7ac970213a8e2dcd49cf797bdffbec2b7f91977861bba12685",
+    "e6f1a4801ac474a69e4928bb0a575065b0283343d5cbd64a9c9547043783cae4",
+    "547eab7522f5aedb051b38c9acf5f70b50aeca68d8246c670445330f097a0a40",
+    "ea2b36e1f075170a8cc9dba4c722c9cdafa313b6f5225077da77816392a73a4a",
+    "5c927f571a516fb509498e28942ebaa7d5d14e9fe5b0c9e3064c057704497253",
+    "686df211f32fb0d7af4b8ed52745ebb8c71772e351c489460f0325b8f82c44be",
+    "686df211f32fb0d7af4b8ed52745ebb8c71772e351c489460f0325b8f82c44be"
+  ],
+  "files": [
+    {
+      "file": "app-preview.webp",
+      "bytes": 48882,
+      "sha256": "c878ba2852e03f1f4a167b9bd37d344ae826a90f26debee9655370ba47a54f5d"
+    },
+    {
+      "file": "app-preview.gif",
+      "bytes": 161415,
+      "sha256": "d2e5b28d7772968a4289c0ba49800687e504f3d50727adf12dcda200fbb84ea2"
+    }
+  ]
+}

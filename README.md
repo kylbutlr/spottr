@@ -10,7 +10,9 @@ Spottr is a free, public-source Chrome extension for developers, designers, and 
 
 <img src="docs/images/app-preview.gif" width="640" alt="Spottr adding a screenshot-backed QA note to a fictional Fieldnotes storefront review">
 
-App preview with demo data. [App overview](https://kylbutlr.com/apps/spottr). [Still image](docs/images/app-preview.webp).
+App preview of Spottr 1.1.0 with demo data. [App overview](https://kylbutlr.com/apps/spottr). [Still image](docs/images/app-preview.webp). [Capture provenance](docs/images/app-preview.provenance.json).
+
+Version **1.1.0** adopts App Stylr v1.4.1. See the [release notes](docs/release-notes-v1.1.0.md) for changes and verification coverage.
 
 ## Install
 
@@ -62,9 +64,11 @@ Spottr does not request persistent access to every website. Fonts and scripts ar
 
 ## Development
 
-Use Node.js 22 (`nvm use`), npm, and the `zip` command. There are no third-party runtime or npm dependencies.
+Use Node.js 22 (`nvm use`), npm, and the `zip` command. There are no third-party runtime dependencies. The development-only App Stylr dependency generates the committed styles, fonts, and icon exports.
 
 ```sh
+npm ci
+npm run styles
 npm run check
 npm test
 npm run build
@@ -72,7 +76,7 @@ npm run build
 
 The build checks the source and manifest, runs the tests, and creates an allowlisted extension ZIP and SHA-256 file in `dist/`. CI runs the same build and retains its artifacts. A successful build does not publish a release or establish installed-browser acceptance.
 
-See [release verification and publication](docs/releasing.md) and the [domain model](CONTEXT.md). The interface follows [App Stylr v1.2.0](https://github.com/kylbutlr/app-stylr/tree/b3ca31ea264d5dd233fd871ac167247f1c306985), with bundled Geist fonts and a Shadow DOM interface isolated from host-page styles. [Implementation notes](docs/app-stylr-exceptions.md) describe product-specific choices.
+See [release verification and publication](docs/releasing.md) and the [domain model](CONTEXT.md). The interface follows [App Stylr v1.4.1](https://github.com/kylbutlr/app-stylr/tree/v1.4.1), with bundled Geist fonts and a Shadow DOM interface isolated from host-page styles. [Implementation notes](docs/app-stylr-exceptions.md) describe product-specific choices.
 
 ## Support and license
 

@@ -1,6 +1,6 @@
 {
   "name": "spottr",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "Local-first Chrome extension for screenshot-backed frontend QA notes.",
@@ -8,9 +8,14 @@
     "build": "npm run check && npm test && node scripts/package.mjs",
     "check": "node scripts/check.mjs",
     "package": "node scripts/package.mjs",
-    "test": "node --test --test-concurrency=1 test/*.test.mjs"
+    "test": "npm run styles:check && node --test --test-concurrency=1 test/*.test.mjs",
+    "styles": "node scripts/sync-app-stylr.mjs",
+    "styles:check": "node scripts/sync-app-stylr.mjs --check"
   },
   "engines": {
     "node": ">=22"
+  },
+  "devDependencies": {
+    "app-stylr": "https://github.com/kylbutlr/app-stylr/archive/refs/tags/v1.4.1.tar.gz"
   }
 }

@@ -8,6 +8,7 @@ export const PACKAGE_FILES = Object.freeze([
   "icons/chrome/icon-32.png",
   "icons/chrome/icon-48.png",
   "icons/chrome/icon-128.png",
+  "icons/chrome/icon-512.png",
   "manifest.json",
   "options.html",
   "options.js",

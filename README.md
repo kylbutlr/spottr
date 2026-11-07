@@ -35,6 +35,8 @@ No Node.js installation or build step is needed to use a release ZIP. Spottr req
 
 A screenshot note includes the selected WebP crop, page URL and title, viewport dimensions, device pixel ratio, scroll position, selection coordinates, and capture time when available. Projects and sessions persist across pages, and a saved note can be moved without changing its original capture context.
 
+Exports include original page URLs and any screenshots. Review them before sharing. Downloaded filenames identify the project, QA session, and export date; the evidence and JSON format stay unchanged.
+
 Use **Keyboard shortcuts** to configure Chrome's capture commands. Shortcuts are unassigned initially so you can choose bindings that fit your workflow.
 
 ## Your data stays local

@@ -39,6 +39,7 @@ button { border: 0; border-radius: var(--radius-button); cursor: pointer; font: 
 .text-button { min-height: 32px; padding: 6px 4px; background: transparent; color: var(--ui-link); }
 .text-button.danger { color: var(--ui-danger); }
 .empty { padding: 16px 0 4px; color: var(--ui-text-muted); font-size: 12px; line-height: 1.6; }
+.export-help { margin-top: 8px; color: var(--ui-text-muted); font-size: 12px; line-height: 1.6; }
 #notes { display: grid; gap: 12px; margin: 10px 0 0; padding: 0; list-style: none; }
 #notes > li { min-width: 0; padding: 12px; border: 1px solid var(--ui-border); border-radius: var(--radius-card); background: var(--ui-surface); }
 .note-image-button { display: block; width: 100%; padding: 0; overflow: hidden; border-radius: var(--radius-control); background: var(--ui-surface-raised); cursor: zoom-in; }

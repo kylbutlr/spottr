@@ -36,8 +36,8 @@
       </div>
 
       <div class="capture-actions">
-        <button id="capture" class="capture" type="button">Capture area <span id="shortcut">Not set</span></button>
-        <button id="note-only" class="capture secondary" type="button">Add text-only note <span id="note-shortcut">Not set</span></button>
+        <button id="capture" class="capture" type="button">Capture area <span id="shortcut" hidden></span></button>
+        <button id="note-only" class="capture secondary" type="button">Add text-only note <span id="note-shortcut" hidden></span></button>
       </div>
 
       <section id="first-use" class="first-use" aria-labelledby="first-use-title">
@@ -50,10 +50,11 @@
         <div class="section-heading">
           <h2 id="notes-title">Saved notes <span id="note-count" class="count" aria-label="Notes in this session">0</span></h2>
           <div class="section-actions">
-            <button id="copy-json" class="text-button" type="button" disabled>Copy JSON</button>
-            <button id="export" class="text-button" type="button" disabled>Export JSON</button>
+            <button id="copy-json" class="text-button" type="button" aria-describedby="export-help" disabled>Copy JSON</button>
+            <button id="export" class="text-button" type="button" aria-describedby="export-help" disabled>Export JSON</button>
           </div>
         </div>
+        <p id="export-help" class="export-help" hidden>Exports include original page URLs and any screenshots. Review before sharing.</p>
         <p id="empty" class="empty">No notes in this session. Capture an issue or add a text-only note to get started.</p>
         <ul id="notes"></ul>
       </section>
@@ -65,7 +66,7 @@
 
       <footer class="popup-footer">
         <p class="privacy-summary"><strong>Local by default.</strong> Notes stay in this Chrome profile until you copy or download an export.</p>
-        <button id="configure-shortcut" class="settings-button" type="button">Keyboard shortcuts</button>
+        <button id="configure-shortcut" class="settings-button" type="button">Keyboard shortcuts (optional)</button>
         <nav class="help-links" aria-label="Spottr help">
           <a href="welcome.html" target="_blank" rel="noreferrer">Quick start</a>
           <a href="support.html" target="_blank" rel="noreferrer">Support</a>

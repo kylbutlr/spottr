@@ -1,3 +1,5 @@
+import { qaExportFilename } from "./shared/model.js";
+
 const $ = (selector) => document.querySelector(selector);
 
 function setStatus(message, tone = "info") {
@@ -14,7 +16,7 @@ function send(message) {
 }
 
 function renderShortcut(shortcut) {
-  return String(shortcut || "Not set")
+  return String(shortcut || "")
     .replaceAll("Command", "⌘")
     .replaceAll("MacCtrl", "⌃")
     .replaceAll("Ctrl", "⌃")
@@ -129,6 +131,7 @@ function renderNotes(notes, workspace) {
   $("#empty").hidden = notes.length > 0;
   $("#copy-json").disabled = notes.length === 0;
   $("#export").disabled = notes.length === 0;
+  $("#export-help").hidden = notes.length === 0;
   const list = $("#notes");
   list.replaceChildren();
 
@@ -315,8 +318,11 @@ async function refresh() {
     send({ type: "qa-get-shortcuts" })
   ]);
   renderWorkspace(dashboard);
-  $("#shortcut").textContent = renderShortcut(shortcutState.capture);
-  $("#note-shortcut").textContent = renderShortcut(shortcutState.note);
+  for (const [selector, binding] of [["#shortcut", shortcutState.capture], ["#note-shortcut", shortcutState.note]]) {
+    const hint = $(selector);
+    hint.textContent = renderShortcut(binding);
+    hint.hidden = !hint.textContent;
+  }
   renderNotes(dashboard.notes, dashboard);
 }
 
@@ -459,11 +465,12 @@ $("#copy-json").addEventListener("click", async () => {
 
 $("#export").addEventListener("click", async () => {
   try {
-    const blob = new Blob([exportJson(await exportPayload())], { type: "application/json" });
+    const payload = await exportPayload();
+    const blob = new Blob([exportJson(payload)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `spottr-qa-notes-${new Date().toISOString().slice(0, 10)}.json`;
+    link.download = qaExportFilename(payload);
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     setStatus("JSON export downloaded.");

@@ -2,6 +2,8 @@
 
 Spottr exports one active project and QA session at a time. The top-level `schemaVersion` identifies the contract. Version 1 is the current format.
 
+Downloaded filenames use `spottr-<project>-<session>-YYYY-MM-DD.json`, with bounded, filesystem-safe labels and fallback names when needed. Names do not change the original project/session values inside the JSON. Both copy and download include original URLs and any screenshots; the popup reminds you to review them before sharing.
+
 ## Top-level object
 
 | Field | Type | Meaning |

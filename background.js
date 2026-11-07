@@ -430,8 +430,8 @@ async function saveNote(input, assignment) {
 async function shortcuts() {
   const commands = await chrome.commands.getAll();
   return {
-    capture: commands.find((command) => command.name === "capture-qa-note")?.shortcut || "Not set",
-    note: commands.find((command) => command.name === "add-qa-note")?.shortcut || "Not set"
+    capture: commands.find((command) => command.name === "capture-qa-note")?.shortcut || "",
+    note: commands.find((command) => command.name === "add-qa-note")?.shortcut || ""
   };
 }
 

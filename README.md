@@ -12,7 +12,7 @@ Spottr is a free, public-source Chrome extension for developers, designers, and 
 
 App preview of Spottr 1.1.0 with demo data. [App overview](https://kylbutlr.com/apps/spottr). [Still image](docs/images/app-preview.webp). [Capture provenance](docs/images/app-preview.provenance.json).
 
-Version **1.1.0** adopts App Stylr v1.4.1. See the [release notes](docs/release-notes-v1.1.0.md) for changes and verification coverage.
+Version **1.1.1** clarifies export sharing and optional shortcuts while retaining App Stylr v1.4.1. See the [release notes](docs/release-notes-v1.1.1.md) for changes and verification coverage.
 
 ## Install
 

@@ -162,3 +162,15 @@ export function createQaExport(notes, target) {
     notes: [...notes].sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)))
   };
 }
+
+export function qaExportFilename(payload) {
+  function label(value, fallback) {
+    return String(value ?? "").normalize("NFKD")
+      .replace(/[\u0300-\u036f]/gu, "")
+      .toLowerCase().replace(/[^a-z0-9]+/gu, "-")
+      .replace(/^-+|-+$/gu, "").slice(0, 48).replace(/-+$/gu, "") || fallback;
+  }
+  const timestamp = new Date(payload?.exportedAt);
+  const date = Number.isNaN(timestamp.getTime()) ? new Date() : timestamp;
+  return `spottr-${label(payload?.target?.projectName, "project")}-${label(payload?.target?.runLabel, "session")}-${date.toISOString().slice(0, 10)}.json`;
+}

@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "app-stylr": "file:vendor/packages/app-stylr-1.4.1.tgz"
+  },
+  "overrides": {
+    "sharp": "0.35.5"
   }
 }
